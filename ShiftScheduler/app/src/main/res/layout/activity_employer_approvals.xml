@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:padding="16dp">
+
+    <!-- Page Title -->
+    <TextView
+        android:id="@+id/textPageTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Review Requests"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- =============================================== -->
+    <!-- EMPLOYEES CARD                                 -->
+    <!-- =============================================== -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardEmployees"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="3dp"
+        app:layout_constraintTop_toBottomOf="@id/textPageTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/textEmployeesHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Employees in Your Team"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/textScrollHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scroll to see all team members ↓"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_marginTop="2dp"/>
+
+            <!-- Employees List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewEmployees"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:paddingTop="8dp"
+                android:clipToPadding="false"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- =============================================== -->
+    <!-- REQUESTS CARD                                   -->
+    <!-- =============================================== -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardRequests"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="3dp"
+
+    app:layout_constraintTop_toBottomOf="@id/cardEmployees"
+
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/textSelectedEmployee"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Select an Employee"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/textNoRequests"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="No pending requests."
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:paddingTop="6dp"
+            app:layout_constraintTop_toBottomOf="@id/textSelectedEmployee"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Requests List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewRequests"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingTop="8dp"
+            android:scrollbars="vertical"
+            app:layout_constraintTop_toBottomOf="@id/textNoRequests"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

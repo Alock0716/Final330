@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    tools:context=".PendingTradesActivity">
+
+    <!-- HEADER BAR -->
+    <LinearLayout
+        android:id="@+id/headerBarPending"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#2E7D32"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/textHeaderPending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shift Changes"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- SUBTITLE TEXT -->
+    <TextView
+        android:id="@+id/textPendingSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="View your pending trade requests, time-off blocks, call-offs, or see available shifts posted by other employees."
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintTop_toBottomOf="@id/headerBarPending"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TABS: PENDING vs AVAILABLE -->
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleGroupTradeTabs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="4dp"
+        app:singleSelection="true"
+        app:selectionRequired="true"
+        app:checkedButton="@id/buttonTabPending"
+        app:layout_constraintTop_toBottomOf="@id/textPendingSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- PENDING TAB -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonTabPending"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="My Pending Changes" />
+
+        <!-- AVAILABLE TAB -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonTabAvailable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Available Shifts"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="@android:color/white" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <!-- LIST OF TRADES / SHIFTS -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPendingTrades"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/toggleGroupTradeTabs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_pending_trade" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

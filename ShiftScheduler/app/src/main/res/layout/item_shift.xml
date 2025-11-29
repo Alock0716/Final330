@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- DATE -->
+        <TextView
+            android:id="@+id/textShiftDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2025-04-21"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#212121" />
+
+        <!-- TIME -->
+        <TextView
+            android:id="@+id/textShiftTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="9:00 AM - 5:00 PM"
+            android:textSize="14sp"
+            android:textColor="#424242"
+            android:layout_marginTop="4dp" />
+
+        <!-- ROLE -->
+        <TextView
+            android:id="@+id/textShiftRole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cashier"
+            android:textSize="14sp"
+            android:textColor="#424242"
+            android:layout_marginTop="2dp" />
+
+        <!-- STATUS LABEL -->
+        <TextView
+            android:id="@+id/textShiftStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="scheduled"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:textColor="#2E7D32"
+            android:layout_marginTop="4dp" />
+
+        <!-- BUTTON ROW -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginTop="10dp">
+
+            <!-- TRADE BUTTON -->
+            <Button
+                android:id="@+id/buttonTrade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trade"
+                android:textAllCaps="false"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:backgroundTint="#64B5F6"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp" />
+
+            <!-- CALL OFF BUTTON -->
+            <Button
+                android:id="@+id/buttonCallOff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call Off"
+                android:textAllCaps="false"
+                android:backgroundTint="#FFA726"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp" />
+
+            <!-- CANCEL BUTTON (MONTH MODE ONLY) -->
+            <Button
+                android:id="@+id/buttonCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:backgroundTint="#E57373"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
